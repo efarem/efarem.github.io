@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Linear Search</title><meta name="twitter:card" content="summary" /><meta name="twitter:site" content="@frank_martin_86" /><meta name="twitter:title" content="Linear Search" /><meta name="twitter:description" content="What is Linear Search"><meta name="description" content="What is Linear Search"><meta name="google-site-verification" content="epFgX0s_0RM3CdjwFcsewfXzPov2g8s9ZBOLyaIUH-o"><link rel="icon" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/touch-icon.png"><link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css"><link rel="stylesheet" href="/assets/core.css"><link rel="canonical" href="/2016/03/01/linear-search"><link rel="alternate" type="application/atom+xml" title="Frank Martin | Software Engineer" href="/feed.xml" /></head><body><aside class="logo"> <a href="/"> <img src="http://www.gravatar.com/avatar/ee2c247f343e1b7f7f4b651dcea162b8.png?s=80" class="gravatar"> </a> <span class="logo-prompt">Back to Home</span></aside><main> <noscript><style> article .footnotes { display: block; }</style></noscript><article><div class="center"><h1>Linear Search</h1><time>March 1, 2016</time></div><div class="divider"></div><h3 id="what-is-linear-search">What is Linear Search</h3><p>Linear search is a method of finding a single item from a list of items.</p><p>To perform a linear search you would examine each item in a list sequentially and unlike some search algorithms it is <strong>not</strong> required that the items are sorted.</p><h3 id="example">Example</h3><pre><code>function search(haystack, needle)
+{
+    for (let i = 0; i &lt; haystack.length; i++)
+        if (haystack[i].id == needle)
+            return haystack[i];
+            
+	return null;
+};
+
+var items = [
+	{ id: 1, name: "Frank Martin" },
+	{ id: 23, name: "Tom Riddle" },
+	{ id: 34, name: "Ron Weasley" },
+	{ id: 89, name: "Harry Potter" },
+	{ id: 233, name: "Hermione Granger" }
+];
+
+console.log(search(items.slice(0), 89));
+console.log(search(items.slice(0), 23));
+console.log(search(items.slice(0), 34));
+console.log(search(items.slice(0), 89));
+console.log(search(items.slice(0), 233));
+
+</code></pre><h3 id="big-o">Big O</h3><p><code>O(n)</code> determined by the amount of items.</p></article><div class="back"> <a href="/">Back</a></div></main></body></html>
