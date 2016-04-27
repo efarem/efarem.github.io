@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Insertion Sort</title><meta name="twitter:card" content="summary" /><meta name="twitter:site" content="@frank_martin_86" /><meta name="twitter:title" content="Insertion Sort" /><meta name="twitter:description" content="What is Insertion Sort"><meta name="description" content="What is Insertion Sort"><meta name="google-site-verification" content="Lis9oaHLvVH5CHITSf4Hk6Gp5ZZo519VRsCqZqTvjhs"><link rel="icon" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/touch-icon.png"><link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css"><link rel="stylesheet" href="/assets/core.css"><link rel="canonical" href="/2016/04/27/insertion-sort"><link rel="alternate" type="application/atom+xml" title="Frank Martin | Software Engineer" href="/feed.xml" /></head><body><aside class="logo"> <a href="/"> <img src="http://www.gravatar.com/avatar/ee2c247f343e1b7f7f4b651dcea162b8.png?s=80" class="gravatar"> </a> <span class="logo-prompt">Back to Home</span></aside><main> <noscript><style> article .footnotes { display: block; }</style></noscript><article><div class="center"><h1>Insertion Sort</h1><time>April 27, 2016</time></div><div class="divider"></div><h3 id="what-is-insertion-sort">What is Insertion Sort</h3><p>Insertion sort is an efficient way of sorting small arrays of data. The way it works is to start with the second element <code class="highlighter-rouge">e[1]</code> and compare with each element to it’s left one by one, if the compared value is lesser (decided by the <code class="highlighter-rouge">cmp</code> callback) then it is shifted one place to the right.</p><p>In the below example I have dealt with the comparison by delegating to a callback function for flexibility.</p><div class="highlighter-rouge"><pre class="highlight"><code>/**
+ * Sort an array using the insertion sort algorithm
+ */
+function insertion(e, cmp) {
+
+	for (var j = 1; j &lt; e.length; j++) {
+		var current = e[j];
+		var i = j-1;
+		while (i &gt;= 0 &amp;&amp; cmp(e[i], current)) {
+			e[i+1] = e[i];
+			i--;
+		}
+		e[i+1] = num;
+	}
+
+	return e;
+}
+
+/**
+ * Compares two integers
+ */
+function cmp(x, y) {
+	return x &gt; y;
+}
+
+/**
+ * Compares two User objects
+ */
+function cmpuser(x, y) {
+	return x.age &gt; y.age;
+}
+
+/**
+ * Create a new User object
+ */
+function User(age) {
+	this.age = age;
+}
+
+// Examples
+
+console.log(insertion([312,23,24,3534,564,65,767,68,566,3445,765,874,63,468], cmp));
+console.log(insertion([
+	new User(3),
+	new User(42),
+	new User(6),
+	new User(34),
+	new User(7),
+	new User(32)
+], cmpuser));
+</code></pre></div></article><div class="back"> <a href="/">Back</a></div></main></body></html>
