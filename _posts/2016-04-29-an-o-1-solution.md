@@ -41,7 +41,7 @@ and including 10^9.
 It still doesn't pass the Hacker Rank tests, wtf!...
 {: style="text-align: center; font-size: 1.2em; font-weight: 500; margin-bottom: 1.5em;"}
 
-The division by 2 causes a rounding error even when using `float` or even `long double`
+The division by 2 causes a rounding error even when `float` or even `long double`
 so I had to find another formula, luckily there is another `n*(x*(x+1)/2)` where __n__ is
 the number we're searching for multiples of and __x__ is the upper limit divided by __n__.
 
