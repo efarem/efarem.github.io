@@ -1,11 +1,13 @@
 ---
-title: Linear Search
+title: Who uses Linear Search Anyway
 updated: 2016-03-01 07:00
 ---
 
 ### What is Linear Search
 
-Linear search is a method of finding a single item from a list of items.
+Linear search is a method of finding a single item from a list of items. Despite
+being incredibly inefficient for large datasets you'd be surprised how much I see
+linear search being used on a daily basis.
 
 To perform a linear search you would examine each item in a list sequentially and unlike some search algorithms it is __not__ required that the items are sorted.
 
@@ -17,7 +19,7 @@ function search(haystack, needle)
     for (let i = 0; i < haystack.length; i++)
         if (haystack[i].id == needle)
             return haystack[i];
-            
+
 	return null;
 };
 

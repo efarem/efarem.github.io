@@ -1,11 +1,16 @@
 ---
-title: Binary Search
+title: Simple Binary Search Function
 updated: 2016-03-02 07:00
 ---
 
 ### What is Binary Search
 
-__Binary search__ is an algorithm for finding an item from a list of items. Put very simply it works by choosing the middle item and discarding the half which doesn't contain the value you're looking for.
+__Binary search__ is an algorithm for finding an item from a list of items. Put very
+simply it works by choosing the middle item and discarding the half which doesn't
+contain the value you're looking for.
+
+Replace your linear searches with the below function for an instant performance boost!
+{: style="text-align: center; font-size: 1.2em; font-weight: 500; margin-bottom: 1.5em;"}
 
 ### Example usage
 
