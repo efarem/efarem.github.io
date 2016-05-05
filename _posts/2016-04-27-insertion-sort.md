@@ -1,5 +1,5 @@
 ---
-title: Insertion Sort
+title: Insertion Sort, just because...
 updated: 2016-04-27 18:00
 ---
 

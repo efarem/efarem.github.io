@@ -38,7 +38,7 @@ From the sum of the previous two totals:
 There you have it, with this in place my new solution achieves `O(1)`, tested for any case up to
 and including 10^9.
 
-It still doesn't pass the Hacker Rank tests, wtf!...
+It still doesn't pass the Hacker Rank tests, wtf!?
 {: style="text-align: center; font-size: 1.2em; font-weight: 500; margin-bottom: 1.5em;"}
 
 The division by 2 causes a rounding error even when `float` or even `long double`
