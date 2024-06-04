@@ -9,11 +9,16 @@ const EID="env_7PnQDYEUPrSZpGSzJqaUYp3UbE5r"
 function App() {
   const params = new URLSearchParams(window.location.search);
   const iid = params.get('iid');
-  if (!iid.match(/inq_[a-zA-Z0-9]*/)) {
-    return <p>Error</p>
+  if (!iid || !iid.match(/inq_[a-zA-Z0-9]*/)) {
+    return (
+      <div className='App'>
+        <p>Error</p>
+      </div>
+    )
   }
   return (
     <div className="App">
+      <div className='persona pad'>
       <PersonaReact
       inquiryId={iid}
       environmentId={EID}
@@ -22,7 +27,11 @@ function App() {
         console.log(`Sending finished inquiry ${inquiryId} to backend`);
       }}
     />
-    <QRCode value={`https://www.skellige.xyz?inquiry-template-id=${TID}&environment-id=${EID}`} />
+    </div>
+    <div className='qr pad'>
+      <p>Continue on another device...</p>
+      <QRCode className='code' value={`https://www.skellige.xyz?iid=${iid}`} />
+    </div>
     </div>
   );
 }

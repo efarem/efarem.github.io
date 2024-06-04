@@ -1,8 +1,23 @@
 .App {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.App > iframe {
+.pad {
+  padding: 20px;
+}
+
+.persona > iframe {
   width: 500px;
   height: 800px;
+}
+
+.qr {
+  .code {
+    width: 100px;
+    height: 100px;
+  }
 }
