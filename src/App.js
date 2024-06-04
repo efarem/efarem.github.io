@@ -4,14 +4,18 @@ import QRCode from "react-qr-code";
 import './App.css';
 
 const TID="itmpl_iysj7t8MNyLvRWPBP1NoMEJewjRS";
-const IID="inq_DGtZQbGEPWwvt2dp4Kj2rJb5BHs5";
 const EID="env_FZvJki2dGQ3ngyMpgoWYBZyGCiQu"
 
 function App() {
+  const params = new URLSearchParams(window.location.search);
+  const iid = params.get('iid');
+  if (!iid.match(/inq_[a-zA-Z0-9]*/)) {
+    return <p>Error</p>
+  }
   return (
     <div className="App">
       <PersonaReact
-      inquiryId={IID}
+      inquiryId={iid}
       environmentId={EID}
       onComplete={({ inquiryId, status, fields }) => {
         // Inquiry completed. Optionally tell your server about it.
