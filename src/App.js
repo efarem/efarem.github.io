@@ -6,16 +6,24 @@ import './App.css';
 const TID="itmpl_7Xty3tejkequXAmUYgJhGadfos5u";
 const EID="env_7PnQDYEUPrSZpGSzJqaUYp3UbE5r"
 
+const Error = () => (
+  <div className='App'>
+    <p>Error</p>
+  </div>
+);
+
 function App() {
   const params = new URLSearchParams(window.location.search);
   const iid = params.get('iid');
-  if (!iid || !iid.match(/inq_[a-zA-Z0-9]*/)) {
-    return (
-      <div className='App'>
-        <p>Error</p>
-      </div>
-    )
+  
+  if (!iid) {
+    return <Error />
   }
+
+  if (!iid.match(/inq_[a-zA-Z0-9]+/)) {
+    return <Error />
+  }
+
   return (
     <div className="App">
       <div className='persona pad'>
