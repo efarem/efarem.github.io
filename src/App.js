@@ -3,8 +3,8 @@ import QRCode from "react-qr-code";
 
 import './App.css';
 
-const TID="itmpl_iysj7t8MNyLvRWPBP1NoMEJewjRS";
-const EID="env_FZvJki2dGQ3ngyMpgoWYBZyGCiQu"
+const TID="itmpl_7Xty3tejkequXAmUYgJhGadfos5u";
+const EID="env_7PnQDYEUPrSZpGSzJqaUYp3UbE5r"
 
 function App() {
   const params = new URLSearchParams(window.location.search);
